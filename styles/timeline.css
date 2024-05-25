@@ -25,7 +25,7 @@ nav {
 nav ul {
     list-style-type: none;
     padding: 0;
-    margin: 0;
+    margin: 18px;
     width: max-content;
 }
 
@@ -33,12 +33,11 @@ nav ul li {
     display: inline;
     padding: min(calc(100vw/72), calc(1920px/72)); /* Calc the padding between the nav components until the viewport is larger than a typical screen */
     cursor: pointer;
+    transition: all cubic-bezier(0.61, 0.01, 0, 0.99) 800ms;
 }
 
 nav ul li.gallery {
     color: rgba(255, 255, 255, .50);
-
-    transition: all cubic-bezier(0.61, 0.01, 0, 0.99) 800ms;
 }
 nav ul li.gallery:hover {
     color: rgba(255, 255, 255, 1);
