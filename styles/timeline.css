@@ -1,0 +1,46 @@
+body {
+    font-family: "Nunito Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 7pt;
+    font-style: normal;
+    background-color: #000;
+    color: #fff;
+}
+
+h1 {
+    font-weight: 900;
+    font-size: 72px;
+}
+
+/* ==== Header ==== */
+
+/* Nav */
+nav {
+    font-weight: 700;
+    font-size: 24px;
+    margin: auto;
+    width: fit-content;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: max-content;
+}
+
+nav ul li {
+    display: inline;
+    padding: min(calc(100vw/72), calc(1920px/72)); /* Calc the padding between the nav components until the viewport is larger than a typical screen */
+    cursor: pointer;
+}
+
+nav ul li.gallery {
+    color: rgba(255, 255, 255, .50);
+
+    transition: all cubic-bezier(0.61, 0.01, 0, 0.99) 800ms;
+}
+nav ul li.gallery:hover {
+    color: rgba(255, 255, 255, 1);
+}
+
