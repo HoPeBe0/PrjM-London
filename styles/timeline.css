@@ -50,3 +50,71 @@ nav ul li.gallery:hover {
     color: rgba(255, 255, 255, 1);
 }
 
+
+
+
+
+/* ==== Header ==== */
+
+header {
+    width: 100vw;
+    height: 100vh;
+
+    display: grid;
+    place-items: center;
+}
+
+header .background-images {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+header .background-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(50%);
+    position: absolute;
+}
+
+
+header .slider-button {
+    transition: transform 1200ms cubic-bezier(0.19, 0.77, 0, 0.99);
+
+    background-color: #00000000;
+    color: #fff;
+    border: 0;
+    outline: none;
+    font-size: 48px;
+    font-weight: 100;
+    text-align: center;
+    cursor: pointer;
+
+}
+
+header .content {
+    width: 75%;
+    height: fit-content;
+    display: grid;
+    place-items: center;
+    grid-template-columns: 74px auto 74px;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "previous title next";
+}
+
+header .content h1 {
+    grid-area: title;
+}
+
+header .content .next-image {
+    grid-area: next;
+}
+
+header .content .previous-image {
+    grid-area: previous;
+}
+

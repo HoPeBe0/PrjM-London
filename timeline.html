@@ -39,7 +39,25 @@
     </nav>
 
     <header>
-        <h1>A Londoni Út</h1>
+
+        <div class="content">
+            <button onclick="nextImage()" class="next-image slider-button">+</button>
+            <h1>A Londoni Út</h1>
+            <!--             <ul>
+                <li>1. Nap</li>
+                <li>2. Nap</li>
+                <li>3. Nap</li>
+                <li>4. Nap</li>
+                <li>5. Nap</li>
+            </ul> -->
+            <button onclick="previousImage()" class="previous-image slider-button">+</button>
+        </div>
+
+        <div class="background-images">
+            <img src="./static/images/testimg1.jpg" alt="Img1" class="head-animating-image-1 header-animating-image">
+            <img src="./static/images/testimg2.jpg" alt="Img2" class="header-animating-image-2 header-animating-image">
+            <img src="./static/images/testimg3.png" alt="Img3" class="header-animating-image-3 header-animating-image">
+        </div>
     </header>
 
 </body>
