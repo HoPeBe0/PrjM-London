@@ -51,8 +51,6 @@ const animateButton = (whichButton) => {
 
 const nextImage = () => {
 
-    console.log("puppe");
-
     // If the last element is visible, disable the scrolling
     if (childrenList[childrenList.length - 1].index === 0) return;
 
@@ -86,3 +84,21 @@ const previousImage = () => {
 
 };
 
+
+
+// Arrow swiping
+
+const body = document.querySelector("body");
+body.addEventListener("keyup", (e) => {
+    if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+
+    switch (e.key) {
+        case "ArrowRight":
+            nextImage();
+            break;
+        case "ArrowLeft":
+            previousImage();
+            break;
+    }
+
+});

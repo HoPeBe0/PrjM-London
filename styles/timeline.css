@@ -5,6 +5,7 @@ body {
     font-style: normal;
     background-color: #000;
     color: #fff;
+    user-select: none;
 }
 
 h1 {
