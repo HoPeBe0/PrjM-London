@@ -26,7 +26,7 @@
     <!-- js -->
     <script src="scripts.js" defer></script>
 
-    <title>Nyári Emlékek: Idővonal</title>
+    <title>Nyári Emlékek</title>
 </head>
 
 <body>
@@ -42,8 +42,10 @@
 
         <div class="content">
             <button onclick="nextImage()" class="next-image slider-button">+</button>
-            <h1>A Londoni Út</h1>
-            <div class="days-list">
+
+            <h1 onclick="scroller('s-1')">A Londoni Út</h1>
+
+            <div class="days-list" onclick="scroller('s-1')">
                 <div class="days">
                     <h2 class="day day-1">Első Nap</h2>
                     <h2 class="day day-2">Második Nap</h2>
@@ -56,25 +58,96 @@
         </div>
 
         <div class="background-images">
-            <img src="./static/images/timeline-header/day1.jpg" alt="Img1"
-                class="head-animating-image-1 header-animating-image">
-            <img src="./static/images/timeline-header/day2.jpg" alt="Img2"
+            <img src="./static/images/header/day1.jpg" alt="Img1" class="head-animating-image-1 header-animating-image">
+            <img src="./static/images/header/day2.jpg" alt="Img2"
                 class="header-animating-image-2 header-animating-image">
-            <img src="./static/images/timeline-header/day3.jpg" alt="Img3"
+            <img src="./static/images/header/day3.jpg" alt="Img3"
                 class="header-animating-image-3 header-animating-image">
-            <img src="./static/images/timeline-header/day4.jpg" alt="Img4"
+            <img src="./static/images/header/day4.jpg" alt="Img4"
                 class="header-animating-image-4 header-animating-image">
-            <img src="./static/images/timeline-header/day5.jpg" alt="Img5"
+            <img src="./static/images/header/day5.jpg" alt="Img5"
                 class="header-animating-image-5 header-animating-image">
         </div>
     </header>
 
     <main>
 
-        <!-- <section>
-            <h2>Path</h2>
+        <section class="day-1">
+            <div class="london-eye spectacle spectacle-l">
+                <div class="text">
+                    <h2>London Eye</h2>
+                    <p>Első napon egyből a dolgok közepébe vágtunk és megnéztük a London Eye-t. A közlekedés
+                        kifejezetten
+                        egyszerű volt autó nélkül is az oyster card-nak köszönhetően.</p>
+                    <p>A London Eye az elvárásoknak megfelelően kifejezetten túristás, ez főleg a mindíg elötte lévő
+                        hatalmas
+                        sorban mutatkozik meg, amit sajnos még előzetes foglalás esetén is ki kell állni. A sor
+                        méretéhez
+                        képest
+                        gyorsan haladt, kb. 45 perc alatt már benn is voltunk.</p>
+                    <p>Ettől eltekintve jó élmény az egész, a kabinokban, kb 15-20 ember elég szellősen elfér és közben
+                        szabadon
+                        lehet mozogni, be lehet látni London nagy részét, a parlamentel és a palotával együtt. Mi is
+                        ebben
+                        gyönyörködtünk, amíg észre nem vettem a tesómmal egy csoport lányt aki a mi kabinunkat nézte egy
+                        másik
+                        kabinból. Úgydöntöttünk, hogy integetünk nekik, mire viszza integettek és
+                        elkezdtek valamit mutogatni. Megfejtettük, hogy valószínű azt akarkák, hogy táncoljunk valamit
+                        (a
+                        tesóm
+                        tudta, hogy konkrétan mit), eltáncoltuk. Ezen is jókat nevettünk, majd szép lassan vége lett a
+                        körnek,
+                        amikor ugyan az a csoport lány csinálni akart egy fotót velünk, sajnos a fotó nekem viszont
+                        nincs
+                        meg.
+                    </p>
+                </div>
+
+                <div class="images">
+                    <img src="./static/images/D1/img1.jpg" alt="" class="image-1">
+                    <img src="./static/images/D1/img2.jpg" alt="" class="image-2">
+                    <img src="./static/images/D1/img4.jpg" alt="" class="image-3">
+                    <img src="./static/images/D1/img5.jpg" alt="" class="image-4">
+                </div>
+
+                <!-- <div class="background-video">
+                    <video autoplay muted>
+                        <source src="./static/videos/London Eye Zoom.mp4" type="video/mp4">
+                    </video>
+                </div> -->
+            </div>
+
+            <div class="regents-street spectacle spectacle-r">
+                <div class="text">
+                    <h2>Regent's Street</h2>
+                    <p>A London Eye-tól nincs messze egy híres londoni bevásárló utca, a Regent's street. Útban odafelé
+                        még
+                        láttunk egy múzeumot amin kívül is voltak kiállítási darabok.</p>
+                    <p>Aztán megérkeztünk. Mi ugyan nem vásárolni mentünk, de azért be néztünk egy-két nagyobb márka
+                        boltjába. Viszont amiért igazából ide jöttünk az egy olyan dolog volt amit a túristák nem nagyon
+                        ismernek. Itt az egyik utcában lefordulva találtuk meg Heddon street-et ami azért különleges,
+                        mert
+                        ebben az utcában készült David Bowie egyik albumjának, a "The Rise and Fall of Ziggy Stardust
+                        and
+                        the Spiders from Mars" fedlap fotója, ami így lehet nem ismerős, de ezen az albumon van például
+                        a
+                        Star Man és a Moonage Daydream is.</p>
+                    <p>Az utca tele volt David Bowie témájú éttermekkel és bárokkal, az egyikbe be is ültünk egy kicsit,
+                        hogy megnézhessük a dekorációt.Belülrő mindenhol lehetett találni valamit ami valahogy Bowie-ra
+                        utalt, vagy a jelképpé vált villám festményt, vagy albumokat a falon, vagy konkrétan ő volt a
+                        falra
+                        volt festve.</p>
+                </div>
+
+                <div class="images">
+                    <img src="./static/images/D1/img17.jpg" alt="" class="image-1">
+                    <img src="./static/images/D1/img9.jpg" alt="" class="image-2">
+                    <img src="./static/images/D1/img12.jpg" alt="" class="image-3">
+                    <img src="./static/images/D1/img18.jpg" alt="" class="image-4">
+                </div>
+            </div>
         </section>
-        <section>
+        <!-- <section>
             <h2>Path</h2>
         </section>
         <section>
