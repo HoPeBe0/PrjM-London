@@ -1,5 +1,8 @@
-const childrenListHTML = document.querySelector(".background-images").children;
-let childrenList = [];
+const backgroundImageChildrenListHTML = document.querySelector(".background-images").children;
+let backgroundImageChildrenList = [];
+
+const days = document.querySelector(".days");
+
 let nextButton = {
     object: document.querySelector(`.next-image`),
     rotation: 0,
@@ -11,20 +14,19 @@ let previousButton = {
 
 
 // Convert HTML List to JS Array and assigning an index to the objects
-for (i = 0; childrenListHTML.length > i; i++) {
+for (i = 0; backgroundImageChildrenListHTML.length > i; i++) {
     let image = {
-        object: childrenListHTML[i],
+        object: backgroundImageChildrenListHTML[i],
         index: i
     };
-    childrenList.push(image);
+    backgroundImageChildrenList.push(image);
 }
 
 // Set up a line of images off viewport, later they can be pulled in simply by changing the index. ALso adds custom transition.
-for (i = 0; childrenList.length > i; i++) {
-    child = childrenList[i];
+for (i = 0; backgroundImageChildrenList.length > i; i++) {
+    child = backgroundImageChildrenList[i];
     child.object.style.transform = `translate(${(child.index * 100)}%)`;
     child.object.style.transition = `all 1200ms cubic-bezier(0.19, 0.77, 0, 0.99)`;
-    // #TODO something still doesn't work here;
 }
 
 
@@ -52,16 +54,20 @@ const animateButton = (whichButton) => {
 const nextImage = () => {
 
     // If the last element is visible, disable the scrolling
-    if (childrenList[childrenList.length - 1].index === 0) return;
+    if (backgroundImageChildrenList[backgroundImageChildrenList.length - 1].index === 0) return;
 
     animateButton("next");
 
-    for (i = 0; childrenList.length > i; i++) {
-        child = childrenList[i];
+    for (i = 0; backgroundImageChildrenList.length > i; i++) {
+        child = backgroundImageChildrenList[i];
 
         child.index--;
 
         child.object.style.transform = `translate(${(child.index * 100)}%)`;
+
+        // Setting the days transform
+        if (child.index !== 0) continue;
+        days.style.transform = `translate(0%, ${-(backgroundImageChildrenList.indexOf(child) * 48)}px`;
     }
 
 };
@@ -70,16 +76,21 @@ const nextImage = () => {
 const previousImage = () => {
 
     // If the first element is visible, disable the scrolling
-    if (childrenList[0].index === 0) return;
+    if (backgroundImageChildrenList[0].index === 0) return;
 
     animateButton("previous");
 
-    for (i = 0; childrenList.length > i; i++) {
-        child = childrenList[i];
+    for (i = 0; backgroundImageChildrenList.length > i; i++) {
+        child = backgroundImageChildrenList[i];
 
         child.index++;
 
         child.object.style.transform = `translate(${(child.index * 100)}%)`;
+
+        // Setting the days transform
+        if (child.index !== 0) continue;
+        days.style.transform = `translate(0%, ${-(backgroundImageChildrenList.indexOf(child) * 48)}px`;
+        console.log(backgroundImageChildrenList.indexOf(child));
     }
 
 };
