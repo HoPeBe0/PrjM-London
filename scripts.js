@@ -1,6 +1,7 @@
-const backgroundImageChildrenListHTML = document.querySelector(".background-images").children;
-let backgroundImageChildrenList = [];
+const headerBackgroundImageChildrenListHTML = document.querySelector(".background-images").children;
+let headerBackgroundImageChildrenList = [];
 
+const main = document.querySelector(".main-content");
 const days = document.querySelector(".days");
 
 let nextButton = {
@@ -14,21 +15,25 @@ let previousButton = {
 
 
 // Convert HTML List to JS Array and assigning an index to the objects
-for (i = 0; backgroundImageChildrenListHTML.length > i; i++) {
+for (i = 0; headerBackgroundImageChildrenListHTML.length > i; i++) {
     let image = {
-        object: backgroundImageChildrenListHTML[i],
+        object: headerBackgroundImageChildrenListHTML[i],
         index: i
     };
-    backgroundImageChildrenList.push(image);
+    headerBackgroundImageChildrenList.push(image);
 }
 
 // Set up a line of images off viewport, later they can be pulled in simply by changing the index. ALso adds custom transition.
-for (i = 0; backgroundImageChildrenList.length > i; i++) {
-    child = backgroundImageChildrenList[i];
+for (i = 0; headerBackgroundImageChildrenList.length > i; i++) {
+    child = headerBackgroundImageChildrenList[i];
     child.object.style.transform = `translate(${(child.index * 100)}%)`;
     child.object.style.transition = `all 1200ms cubic-bezier(0.19, 0.77, 0, 0.99)`;
-}
 
+    // Setting the day section transform
+    if (child.index !== 0) continue;
+    const activeDaySectionHeight = document.querySelector(`section.day-${headerBackgroundImageChildrenList.indexOf(child) + 1}`).offsetHeight;
+    main.style.height = `${activeDaySectionHeight}px`;
+}
 
 const animateButton = (whichButton) => {
 
@@ -54,12 +59,12 @@ const animateButton = (whichButton) => {
 const nextImage = () => {
 
     // If the last element is visible, disable the scrolling
-    if (backgroundImageChildrenList[backgroundImageChildrenList.length - 1].index === 0) return;
+    if (headerBackgroundImageChildrenList[headerBackgroundImageChildrenList.length - 1].index === 0) return;
 
     animateButton("next");
 
-    for (i = 0; backgroundImageChildrenList.length > i; i++) {
-        child = backgroundImageChildrenList[i];
+    for (i = 0; headerBackgroundImageChildrenList.length > i; i++) {
+        child = headerBackgroundImageChildrenList[i];
 
         child.index--;
 
@@ -67,7 +72,13 @@ const nextImage = () => {
 
         // Setting the days transform
         if (child.index !== 0) continue;
-        days.style.transform = `translate(0%, ${-(backgroundImageChildrenList.indexOf(child) * 48)}px`;
+        days.style.transform = `translate(0%, ${-(headerBackgroundImageChildrenList.indexOf(child) * 48)}px`;
+
+        // Setting the main content to transform
+        main.style.transform = `translate(${-(headerBackgroundImageChildrenList.indexOf(child) * 100)}vw)`;
+
+        const activeDaySectionHeight = document.querySelector(`section.day-${headerBackgroundImageChildrenList.indexOf(child) + 1}`).offsetHeight;
+        main.style.height = `${activeDaySectionHeight}px`;
     }
 
 };
@@ -76,12 +87,12 @@ const nextImage = () => {
 const previousImage = () => {
 
     // If the first element is visible, disable the scrolling
-    if (backgroundImageChildrenList[0].index === 0) return;
+    if (headerBackgroundImageChildrenList[0].index === 0) return;
 
     animateButton("previous");
 
-    for (i = 0; backgroundImageChildrenList.length > i; i++) {
-        child = backgroundImageChildrenList[i];
+    for (i = 0; headerBackgroundImageChildrenList.length > i; i++) {
+        child = headerBackgroundImageChildrenList[i];
 
         child.index++;
 
@@ -89,8 +100,13 @@ const previousImage = () => {
 
         // Setting the days transform
         if (child.index !== 0) continue;
-        days.style.transform = `translate(0%, ${-(backgroundImageChildrenList.indexOf(child) * 48)}px`;
-        console.log(backgroundImageChildrenList.indexOf(child));
+        days.style.transform = `translate(0%, ${-(headerBackgroundImageChildrenList.indexOf(child) * 48)}px`;
+
+        // Setting the main content to transform
+        main.style.transform = `translate(${-(headerBackgroundImageChildrenList.indexOf(child) * 100)}vw)`;
+
+        const activeDaySectionHeight = document.querySelector(`section.day-${headerBackgroundImageChildrenList.indexOf(child) + 1}`).offsetHeight;
+        main.style.height = `${activeDaySectionHeight}px`;
     }
 
 };
