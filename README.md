@@ -9,7 +9,7 @@ on [Unsplash](https://unsplash.com/photos/brown-concrete-building-ZAd3Z9wOgOs?ut
 Photo of the Queen's House by [zeynep elif ozdemir](https://unsplash.com/@zeynepelifko?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
 on [Unsplash](https://unsplash.com/photos/a-view-of-a-city-from-a-distance-9GhOPB2Teus?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
 
-Photo of the Queen's House by [Tomasz Zielonka](https://unsplash.com/@tzielonka?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
+Photo of the Royal Observatory by [Tomasz Zielonka](https://unsplash.com/@tzielonka?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
 on [Unsplash](https://unsplash.com/photos/a-red-ball-on-top-of-a-building-with-a-cross-on-top-Oz45UJklkTY?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
 
 Phonto of the IFS Cable Car by [The BBC](https://www.bbc.com/news/uk-england-london-62672319)
@@ -17,4 +17,10 @@ Phonto of the IFS Cable Car by [The BBC](https://www.bbc.com/news/uk-england-lon
   
 Fonts and Icons from [Google Fonts](fonts.google.com)
 
-Circle progress bar ay line 329:337 timeline.css from [StackOverflow](https://stackoverflow.com/questions/13059190/html5-css3-circle-with-partial-border)
+Circle progress bar at line 329:337 timeline.css from [StackOverflow](https://stackoverflow.com/questions/13059190/html5-css3-circle-with-partial-border)
+
+#TODO Finishing the next day on end
+#TODO Gallery
+#TODO card effect
+#TODO Half and a half click
+#TODO 

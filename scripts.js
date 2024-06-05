@@ -14,6 +14,17 @@ let previousButton = {
 };
 
 
+// Refresh the main content's height based on the width of the window
+window.addEventListener('resize', (event) => {
+    for (i = 0; headerBackgroundImageChildrenList.length > i; i++) {
+        const child = headerBackgroundImageChildrenList[i];
+        if (child.index !== 0) continue;
+        refreshMainHeight(child);
+    }
+}, true);
+
+
+
 // Convert HTML List to JS Array and assigning an index to the objects
 for (i = 0; headerBackgroundImageChildrenListHTML.length > i; i++) {
     let image = {
@@ -77,8 +88,7 @@ const nextImage = () => {
         // Setting the main content to transform
         main.style.transform = `translate(${-(headerBackgroundImageChildrenList.indexOf(child) * 100)}vw)`;
 
-        const activeDaySectionHeight = document.querySelector(`section.day-${headerBackgroundImageChildrenList.indexOf(child) + 1}`).offsetHeight;
-        main.style.height = `${activeDaySectionHeight}px`;
+        refreshMainHeight(child);
     }
 
 };
@@ -105,12 +115,15 @@ const previousImage = () => {
         // Setting the main content to transform
         main.style.transform = `translate(${-(headerBackgroundImageChildrenList.indexOf(child) * 100)}vw)`;
 
-        const activeDaySectionHeight = document.querySelector(`section.day-${headerBackgroundImageChildrenList.indexOf(child) + 1}`).offsetHeight;
-        main.style.height = `${activeDaySectionHeight}px`;
+        refreshMainHeight(child);
     }
 
 };
 
+const refreshMainHeight = (child) => {
+    const activeDaySectionHeight = document.querySelector(`section.day-${headerBackgroundImageChildrenList.indexOf(child) + 1}`).offsetHeight;
+    main.style.height = `${activeDaySectionHeight}px`;
+};
 
 
 // Arrow swiping

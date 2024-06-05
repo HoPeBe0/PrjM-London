@@ -11,6 +11,10 @@ body {
     background-color: #000;
     color: #fff;
     user-select: none;
+    
+    width: calc(100vw - 5px);
+    max-width: 1920px;
+    margin: auto;
 }
 
 /* width */
@@ -35,15 +39,20 @@ body {
     background: rgba(255, 255, 255, .60); 
   }
 
-h1 {
-    font-weight: 900;
-    font-size: 72px;
-}
-
-h2 {
-    font-size: 36px;
-    font-weight: 900;
-}
+  @media (max-width: 1820px) {
+      
+    h1 {
+          font-weight: 900;
+          font-size: calc(12px + 4vw);
+      }
+      
+      h2 {
+          font-weight: 900;
+          font-size: calc(12px + 2vw);
+      }
+    
+  }
+  
 
 p {
     font-size: 20px;
@@ -93,7 +102,7 @@ nav ul li.gallery:hover {
 
 /* ==== Header ==== */
 header {
-    width: calc(100vw - 5px);
+    width: 100%;
     height: 100vh;
 
     display: grid;
@@ -212,10 +221,12 @@ header .bottom-chevron-nav .bottom-chevron {
 
 main {
     overflow: hidden;
+    width: 100%;
 }
 
 main .main-content {
     display: grid;
+    width: 100%;
     height: min-content;
     grid-template-columns: repeat(5, auto);
     grid-template-rows: repeat(1, auto);
@@ -229,26 +240,30 @@ main .day {
 }
 
 /* ==== Days ==== */
-.spectacle {
-    width: calc(100vw - 5px);
-    min-height: 100vh;
-    height: fit-content;
-    margin: 48px 0;
-    display: grid;
-    place-items: center;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: auto;
+@media (min-width: 850px) {
+    .spectacle {
+        width: calc(100vw - 5px);
+        max-width: 1920px;
+        min-height: 100vh;
+        height: fit-content;
+        margin: 48px 0;
+        display: grid;
+        place-items: center;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto;
+    }
+
+    .spectacle-l {
+        grid-template-areas: 
+        "text images";
+    }
+
+    .spectacle-r {
+        grid-template-areas: 
+        "images text";
+    }
 }
 
-.spectacle-l {
-    grid-template-areas: 
-    "text images";
-}
-
-.spectacle-r {
-    grid-template-areas: 
-    "images text";
-}
 
 .spectacle .text {
     grid-area: text;
@@ -314,3 +329,45 @@ main .day {
     transform: scale(1.3);
     z-index: 1;
 }
+
+@media (max-width: 850px) {
+
+    .spectacle {
+        width: calc(100vw - 5px);
+        max-width: 1920px;
+        min-height: 100vh;
+        height: fit-content;
+        margin: 48px 0;
+        display: grid;
+        place-items: center;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+    }
+    
+    .spectacle-l {
+        grid-template-areas: 
+        "text"
+        "images";
+    }
+    
+    .spectacle-r {
+        grid-template-areas: 
+        "text"
+        "images";
+    }
+}
+
+@media (min-width: 1820px) {
+      
+    h1 {
+          font-weight: 900;
+          font-size: 72px;
+      }
+      
+      h2 {
+          font-weight: 900;
+          font-size: 36px;
+      }
+    
+  }
+
