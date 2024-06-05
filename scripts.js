@@ -114,7 +114,6 @@ const previousImage = () => {
 
 
 // Arrow swiping
-
 const body = document.querySelector("body");
 body.addEventListener("keyup", (e) => {
     if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;

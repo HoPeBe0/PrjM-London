@@ -118,7 +118,7 @@ header .background-images img {
 }
 
 
-header .slider-button {
+header .slider-button, .slider-button {
     transition: transform 1200ms cubic-bezier(0.19, 0.77, 0, 0.99);
 
     background-color: #00000000;
@@ -147,7 +147,6 @@ header .content {
 
 header .content h1 {
     grid-area: title;
-    cursor: pointer;
 }
 
 header .content .next-image {
@@ -164,7 +163,7 @@ header .content .days-list {
     height: 43.9px; /* Height of a line */
     overflow: hidden;
 
-    cursor: pointer;
+
 }
 
 header .content .days-list .days {
@@ -181,6 +180,30 @@ header .content .days-list .days .day {
     padding: 0;
     margin: 0;
     position: relative;
+}
+
+header .bottom-chevron-nav {
+    position: absolute;
+    bottom: 48px;
+}
+
+header .bottom-chevron-nav .bottom-chevron {
+    rotate: 90deg;
+    animation: jumping-chevron infinite cubic-bezier(0.19, 0.77, 0, 0.99) 2s 2s;
+}
+
+@keyframes jumping-chevron {
+    0% {
+        transform: translate(0%);
+    }
+
+    50% {
+        transform: translate(50%) scale(.9);
+    }
+    
+    100% {
+        transform: translate(0%);
+    }
 }
 
 
