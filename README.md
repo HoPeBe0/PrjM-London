@@ -18,9 +18,3 @@ Phonto of the IFS Cable Car by [The BBC](https://www.bbc.com/news/uk-england-lon
 Fonts and Icons from [Google Fonts](fonts.google.com)
 
 Circle progress bar at line 329:337 timeline.css from [StackOverflow](https://stackoverflow.com/questions/13059190/html5-css3-circle-with-partial-border)
-
-#TODO Finishing the next day on end
-#TODO Gallery
-#TODO card effect
-#TODO Half and a half click
-#TODO 
